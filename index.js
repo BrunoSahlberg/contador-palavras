@@ -3,7 +3,7 @@
 function contarPalavras() {
   // Obter o valor do campo de texto e da palavra a ser contada
   const codigo = document.getElementById("codigo").value;
-  let palavrasCodigo = codigo.split(" ");
+  let palavrasCodigo = codigo.split("\n");
   console.log(palavrasCodigo);
   var contEscreva = 0;
   var contLeia = 0;
@@ -28,8 +28,8 @@ function contarPalavras() {
 function printPalavras(contEscreva, contEscreval, contLeia) {
   document.getElementById("contador").innerHTML =
     `<p> Escreva: ${contEscreva} <br>
-       Escreval: ${contEscreval} <br>
-       Leia: ${contLeia} <br>
+         Escreval: ${contEscreval} <br>
+         Leia: ${contLeia} <br>
   </p>`;
 }
 
