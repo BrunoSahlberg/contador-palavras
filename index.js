@@ -8,9 +8,13 @@ function contarPalavras() {
   var contEscreva = 0;
   var contLeia = 0;
   var contEscreval = 0;
+  var contSe = 0;
+  var contFimse = 0;
+  var contEntao = 0;
 
   for (let i = 0; i < palavrasCodigo.length; i++) {
-    const str = palavrasCodigo[i];
+    const text = palavrasCodigo[i];
+    const str = text.toLowerCase();
     if (str.match('escreva')) {
       contEscreva++;
     }
@@ -22,16 +26,45 @@ function contarPalavras() {
     if (str.match('leia')) {
       contLeia++;
     }
-    printPalavras(contEscreva, contEscreval, contLeia);
+
+    if (str.match('se')) {
+      contSe++;
+    }
+
+    if (str.match('fimse')) {
+      contFimse++;
+    }
+
+    if (str.match('entao')) {
+      contEntao++;
+    }
+    printPalavras(
+      contEscreva,
+      contEscreval,
+      contLeia,
+      contSe,
+      contFimse,
+      contEntao,
+    );
   }
 }
 
-function printPalavras(contEscreva, contEscreval, contLeia) {
+function printPalavras(
+  contEscreva,
+  contEscreval,
+  contLeia,
+  contSe,
+  contFimse,
+  contEntao,
+) {
   document.getElementById(
     'contador',
   ).innerHTML = `<p> Escreva: ${contEscreva} <br>
          Escreval: ${contEscreval} <br>
          Leia: ${contLeia} <br>
+         Se: ${contSe} <br>
+         Fimse: ${contFimse} <br>
+         Entao: ${contEntao} <br>
   </p>`;
 }
 
